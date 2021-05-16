@@ -1,0 +1,66 @@
+{% extends "utils/layout.html" %}
+{% block content %}
+<div class="inner-page-banner">
+        <div class="container">
+        </div>
+</div>
+
+<section id="contant" class="contant main-heading team">
+         <div class="row">
+            <div class="container">
+                  <div class="col-md-4">
+                     <div class="contact-info">
+                        <div class="kode-section-title">
+                           <h3>İletişim Bilgileri</h3>
+                        </div>
+                        <div class="kode-forminfo">
+                           <p>Sevgili Öğrencilerimiz,<br>
+                              Randevu sistemi ile ilgili teknik problemleriniz için 444 07 99 No'lu telefondan ve <span><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr <a/></span>adresinden destek alabilirsiniz. </p>
+                           <ul class="kode-form-list">
+                              <li>
+                                 <i class="fa fa-home"></i> 
+                                 <p><strong>Adres:</strong> Meşrutiyet, Işık Ünv., 34980 Şile/İstanbul</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-phone"></i> 
+                                 <p><strong>Telefon:</strong>  444 07 99</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-envelope-o"></i> 
+                                 <p><strong>Email:</strong><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr</a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>   
+                  <div class="col-md-8">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Randevu Saati</th>
+                            <th scope="col">Oluşturulma Zamanı</th>
+                            <th scope="col">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {% for randevu in randevular%}
+                                 <tr>
+                                 <th scope="row">{{ loop.index }}</th>
+                                 <td>{{randevu.saat}}</td>
+                                 <td>{{randevu.create_date}}</td>
+                              {% if randevu.aktif_randevu == 1 %}   
+                                 <td><a href="/randevu/sil/{{randevu.id}}"  class="btn btn-primary btn-user">İptal Et</a></td>
+                              {% else %}
+                                 <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                              {% endif %}      
+                                 </tr>
+                           {% endfor %}
+                        </tbody>
+                    </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+{% endblock %}

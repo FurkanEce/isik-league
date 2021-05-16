@@ -1,0 +1,71 @@
+{% extends "utils/layout.html" %}
+{% block content %}
+         <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+         <div class="inner-information-text">
+            <div class="container">
+               <h3>İLETİŞİM</h3>
+               <ul class="breadcrumb">
+                  <li><a href="{{url_for('index')}}">Anasayfa</a></li>
+                  <li class="active">İletişim</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading team">
+         <div class="row">
+            <div class="container">
+               <div class="contact">
+                  <div class="col-md-12">
+                     <div class="map"> 
+                        <iframe src="https://maps.google.com/maps?q=%C4%B1%C5%9F%C4%B1k%20&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="contact-info">
+                        <div class="kode-section-title">
+                           <h3>İletişim Bilgileri</h3>
+                        </div>
+                        <div class="kode-forminfo">
+                           <p>Sevgili Öğrencilerimiz,<br>
+                              Randevu sistemi ile ilgili teknik problemleriniz için 444 07 99 No'lu telefondan ve <span><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr <a/></span>adresinden destek alabilirsiniz. </p>
+                           <ul class="kode-form-list">
+                              <li>
+                                 <i class="fa fa-home"></i> 
+                                 <p><strong>Adres:</strong> Meşrutiyet, Işık Ünv., 34980 Şile/İstanbul</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-phone"></i> 
+                                 <p><strong>Telefon:</strong>  444 07 99</p>
+                              </li>
+                              <li>
+                                 <i class="fa fa-envelope-o"></i> 
+                                 <p><strong>Email:</strong><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr</a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="contact-us">
+                        <form method="post" class="comments-form" id="contactform">
+                           <ul>
+                              <li><input type="text" id="name" name="name" class="required" placeholder="İsim *"></li>
+                              <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
+                              <li><input type="text" name="address" id="address" placeholder="Adres:"></li>
+                              <li><textarea name="message" id="message" placeholder="Mesajınız..."></textarea></li>
+                              <li><input class="thbg-color" type="submit" value="Gönder"></li>
+                           </ul>
+                           <div class="hidden-me" id="contact_form_responce">
+                              <p></p>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+{% endblock %}

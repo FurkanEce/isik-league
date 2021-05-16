@@ -1,0 +1,50 @@
+{% extends "utils/layout.html" %}
+{% block head %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+{% endblock%}
+{% block inner_page_banner %}
+<div class="inner-page-banner">
+   <div class="container">
+   </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<section id="contant" class="contant main-heading" style="padding-bottom:0;margin-bottom:-1px;position:relative;z-index:1;">
+   <div class="aboutus">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-sm-12">
+               <div class="col-md-12 col-sm-12 col-xs-12 ">
+                  <div class="full">
+                     <div style="overflow:hidden;">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-8">
+                                 <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker'>
+                                          <input id='time-input' type='text' class="form-control" />
+                                          <span class="input-group-addon">
+                                             <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="btn" id="kaydet-btn">Kaydet</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{% endblock %}
+
+{% block plugins %}
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+   <script src="{{url_for ('static', filename='js/randevu.js')}}"></script>
+{% endblock %}
