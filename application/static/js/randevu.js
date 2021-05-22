@@ -2,9 +2,12 @@ $(function ()
 {
     document.querySelector("#kaydet-btn").addEventListener("click", kaydet, false);
     
-    $('#datetimepicker').datetimepicker({
-        inline: true,
-        sideBySide: true
+    $('#sandbox-container').datepicker({
+        maxViewMode: 0,
+        todayBtn: "linked",
+        clearBtn: true,
+        language: "tr",
+        todayHighlight: true
     });
 
     function kaydet(){
