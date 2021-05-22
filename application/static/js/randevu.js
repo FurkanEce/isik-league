@@ -1,10 +1,10 @@
-$(function () {
-
+$(function () 
+{
     document.querySelector("#kaydet-btn").addEventListener("click", kaydet, false);
     
     $('#datetimepicker').datetimepicker({
-       inline: true,
-       sideBySide: true
+        inline: true,
+        sideBySide: true
     });
 
     function kaydet(){
@@ -16,5 +16,5 @@ $(function () {
         function(data, status){
             alert("Data: " + data + "\nStatus: " + status);
         });     
-    }
- });
+     }
+  });
