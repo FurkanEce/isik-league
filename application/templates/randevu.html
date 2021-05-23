@@ -28,40 +28,15 @@
                            <div class="col-md-7 column table-responsive">
                               <table class="table">
                                  <tr>
-                                    <td><button class="btn btn-primary disabled" id="kaydet-btn">01.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">02.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">03.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">04.00</button></td>
-                                 </tr>
-                                 <tr>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">05.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">06.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">07.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">08.00</button></td>
-                                 </tr>
-                                 <tr>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">09.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">10.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">11.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">12.00</button></td>
-                                 </tr>
-                                 <tr>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">13.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">14.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">15.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">16.00</button></td>
-                                 </tr>
-                                 <tr>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">17.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">18.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">19.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">20.00</button></td>
-                                 </tr>
-                                 <tr>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">21.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">22.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">23.00</button></td>
-                                    <td><button class="btn btn-primary" id="kaydet-btn">24.00</button></td>
+                                 {% for randevu in randevular  %} 
+                                    <td>
+                                 {% if randevu.aktif_randevu == 0 %}
+                                    <td><button type="button" class="btn btn-primary">{{randevu.saat}}</button></td>            
+                                 {% else %}
+                                    <td><button type="button" class="btn btn-primary" disabled>{{randevu.saat}}</button></td>
+                                 {% endif %}     
+                                    </td>
+                                 {% endfor %}
                                  </tr>
                               </table>
                            </div>

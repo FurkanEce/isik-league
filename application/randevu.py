@@ -1,21 +1,28 @@
 from flask import Flask,render_template,request,session,redirect,url_for
-from application import app, db
+from application import app,db
 from application.models.randevu_model import Randevu
 from datetime import datetime
 
 
 @app.route("/randevu", methods=['GET'])
 def randevu():
-    return render_template("randevu.html")
+
+    today_date = datetime.now()
+    change_date = today_date.strftime("%Y-%m-%d")
+    print(change_date)
+    randevular = Randevu.query.filter_by(tarih = change_date).all()
+    print(randevular)
+    return render_template("randevu.html", randevular = randevular)
 
 
 @app.route('/randevu/kaydet', methods=['POST'])
 def kaydet():
     user_id =  session["user_id"]
     time = request.form['time']
-    new_time = datetime.strptime(time, '%m/%d/%Y %H:%M %p')
+
+
     db.create_all()
-    randevu = Randevu(saat = new_time, kullanici_id = user_id)
+    randevu = Randevu(saat = time, kullanici_id = user_id)
     db.session.add(randevu)
     db.session.commit()
     return time
