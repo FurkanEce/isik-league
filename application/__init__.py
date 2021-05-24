@@ -15,3 +15,10 @@ import application.iletisim
 import application.login
 import application.register
 import application.profile
+import application.futbol
+import application.basketbol
+import application.voleybol
+import application.tenis
+import application.amerikanFutbolu
+
+

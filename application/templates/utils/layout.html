@@ -116,23 +116,20 @@
                                                       <div id="menCollection" class="carousel slide" data-ride="carousel">
                                                          <div class="carousel-inner">
                                                             <div class="item active">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="{{url_for('static',filename='images/123.jpg')}}" alt="#" /></a></div>
+                                                               <div class="banner-for-match"><a><img class="img-responsive" src="{{url_for('static', filename='images/futbolTakimi/1-min.jpg')}}" alt="#" /></a></div>
                                                             </div>
                                                             <!-- End Item -->
                                                             <div class="item">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="{{url_for('static',filename='images/basketbol.jpg')}}" alt="#" /></a></div>
+                                                               <div class="banner-for-match"><a src="{{url_for('static', filename='images/basketbolTakimi/1.jpg')}}" alt="#" /></a></div>
                                                             </div>
                                                             <!-- End Item -->
                                                             <div class="item">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="{{url_for('static',filename='images/voleybol.jpg')}}" alt="#" /></a></div>
+                                                               <div class="banner-for-match"><a><img class="img-responsive" src="{{url_for('static', filename='images/amerikanFutbolu/3.jpg')}}" alt="#" /></a></div>
                                                             </div>
                                                             <!-- End Item -->
                                                             <div class="item">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="{{url_for('static',filename='images/tenis.jpg')}}" alt="#" /></a></div>
-                                                            </div>
-                                                            <div class="item">
-                                                               <div class="banner-for-match"><a href="#"><img class="img-responsive" src="{{url_for('static',filename='images/amerikan-futbolu.jpg')}}" alt="#" /></a></div>
-                                                            </div>                                
+                                                               <div class="banner-for-match"><a><img class="img-responsive" src="{{url_for('static', filename='images/voleybolTakimi/1.jpg')}}" alt="#" /></a></div>
+                                                            </div>                              
                                                          </div>
                                                          <!-- End Carousel Inner -->
                                                          <!-- Controls -->
@@ -151,11 +148,11 @@
                                                 <li class="col-sm-4">
                                                    <ul class="menu-inner">
                                                       <li class="dropdown-header">Branşlar</li>
-                                                      <li><a href="#">Futbol</a></li>
-                                                      <li><a href="#">Basketbol</a></li>
-                                                      <li><a href="#">Voleybol</a></li>
-                                                      <li><a href="#">Tenis</a></li>
-                                                      <li><a href="#">Amerikan Futbolu</a></li>
+                                                      <li><a href="{{ url_for('futbol')}}">Futbol</a></li>
+                                                      <li><a href="{{ url_for('basketbol')}}">Basketbol</a></li>
+                                                      <li><a href="{{ url_for('voleybol')}}">Voleybol</a></li>
+                                                      <li><a href="{{ url_for('tenis')}}">Tenis</a></li>
+                                                      <li><a href="{{ url_for('amerikanFutbolu')}}">Amerikan Futbolu</a></li>
                                                 </li>
                                              </ul>
                                           </li>
