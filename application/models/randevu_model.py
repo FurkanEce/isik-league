@@ -9,3 +9,4 @@ class Randevu(db.Model):
     aktif_randevu = db.Column(db.Boolean, default=True, nullable=False)
     create_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     tarih = db.Column(db.String, nullable=False)
+    saha = db.Column(db.Integer, nullable=False)

@@ -24,7 +24,8 @@ $(function ()
         $.post("http://127.0.0.1:5000/randevu/kaydet",
         {
             tarih: input_time,
-            saat: secilen_saat
+            saat: secilen_saat,
+            saha: $("#saha :selected").val()
         },
         function(data, status){
             window.location.href = 'http://127.0.0.1:5000/profile'
@@ -32,8 +33,9 @@ $(function ()
     }
 
     $('#tarih').on('changeDate', function() {
+        var secilen_saha = $("#saha :selected").val();
         var input_time = $('#tarih').datepicker('getFormattedDate');
-        window.location.href = 'http://127.0.0.1:5000/randevu/'+input_time;
+        window.location.href = 'http://127.0.0.1:5000/randevu/'+ secilen_saha + '/' + input_time;
     });
 
   });

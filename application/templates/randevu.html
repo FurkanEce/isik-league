@@ -16,6 +16,21 @@
                   <div class="card">
                   </br>
                   <h1>Randevu almak istediğiniz tarihi ve saati seçiniz</h1>
+                  <select id="saha" class="form-select" aria-label="Default select example">
+                     {% if saha == '1' %}
+                        <option value="1" selected>Büyük Saha</option>
+                        <option value="2">Küçük Saha</option>
+                        <option value="3">Tenis Kortu</option>
+                     {% elif  saha == '2' %}
+                        <option value="1">Büyük Saha</option>
+                        <option value="2" selected>Küçük Saha</option>
+                        <option value="3">Tenis Kortu</option>
+                     {% elif saha == '3' %}
+                        <option value="1">Büyük Saha</option>
+                        <option value="2">Küçük Saha</option>
+                        <option value="3" selected>Tenis Kortu</option>
+                     {% endif %}
+                  </select>
                   <hr>
                      <div class="row">
                         <div class="container">
