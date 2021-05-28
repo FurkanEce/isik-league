@@ -21,23 +21,25 @@
                         <div class="container">
                            <div class="col-md-4 column">
                                     <div class="center">
-                                       <p><div id="sandbox-container"></div></p>
+                                       <p><div id="tarih" data-date="{{tarih}}"></div></p>
                                     </div>
                                     <p></p>
                            </div>
                            <div class="col-md-7 column table-responsive">
-                              <table class="table">
-                                 <tr>
-                                 {% for randevu in randevular  %} 
-                                    <td>
-                                 {% if randevu.aktif_randevu == 0 %}
-                                    <td><button type="button" class="btn btn-primary">{{randevu.saat}}</button></td>            
-                                 {% else %}
-                                    <td><button type="button" class="btn btn-primary" disabled>{{randevu.saat}}</button></td>
-                                 {% endif %}     
-                                    </td>
+                              <table id="saat-id" class="table">
+                                 {% for saat, aktiflik in randevu.items()  %}
+                                    {% if loop.index0 % 4 == 0 %}
+                                       <tr>
+                                    {% endif %}
+                                          {% if aktiflik == 0 %}
+                                             <td><button id="saat-{{loop.index0}}" type="button" class="btn btn-primary">{{saat}}</button></td>            
+                                          {% else %}
+                                             <td><button id="saat-{{loop.index0}}" type="button" class="btn btn-primary" disabled>{{saat}}</button></td>
+                                          {% endif %}
+                                    {% if loop.index % 4 == 0 %}
+                                       </tr>
+                                    {% endif %}
                                  {% endfor %}
-                                 </tr>
                               </table>
                            </div>
                         </div>

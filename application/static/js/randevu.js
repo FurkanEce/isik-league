@@ -1,28 +1,39 @@
 $(function () 
 {
+    var secilen_saat = null;
     document.querySelector("#kaydet-btn").addEventListener("click", kaydet, false);
+    for(var i=0;i<24;i++){
+        document.querySelector("#saat-" + i).addEventListener("click", saat_kaydet, false);
+    }
     
-    $('#sandbox-container').datepicker({
+    
+    $('#tarih').datepicker({
+        format: "yyyy-mm-dd",
         maxViewMode: 0,
         todayBtn: "linked",
-        clearBtn: true,
         language: "tr",
         todayHighlight: true
     });
 
+    function saat_kaydet(){
+        secilen_saat = $(this).text();
+    }
 
-   
     function kaydet(){
-
-        var input_time = $('#time-input').val();
+        var input_time = $('#tarih').datepicker('getFormattedDate');
         $.post("http://127.0.0.1:5000/randevu/kaydet",
         {
-            time: input_time,
+            tarih: input_time,
+            saat: secilen_saat
         },
         function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });     
-     
-        
+            window.location.href = 'http://127.0.0.1:5000/profile'
+        });
     }
+
+    $('#tarih').on('changeDate', function() {
+        var input_time = $('#tarih').datepicker('getFormattedDate');
+        window.location.href = 'http://127.0.0.1:5000/randevu/'+input_time;
+    });
+
   });
