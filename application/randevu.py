@@ -1,8 +1,19 @@
 from flask import Flask,render_template,request,session,redirect,url_for
 from application import app,db
 from application.models.randevu_model import Randevu
+from application.models.kullanici_model import Kullanici
 from datetime import datetime
+from flask_mail import Mail, Message
 
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'furkanece99@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Pinar123.'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+mail = Mail(app)
 
 @app.route("/randevu", methods=['GET'])
 def randevu():
@@ -43,17 +54,32 @@ def kaydet():
     tarih = request.form['tarih']
     saat = request.form['saat']
     saha = request.form['saha']
+    email = session["email"]
+    gonder = Kullanici.query.filter_by(email = email).first()
+    print(gonder)
     randevu = Randevu(saat = saat, tarih=tarih, kullanici_id = user_id, saha = int(saha))
     db.session.add(randevu)
     db.session.commit()
+    msg = Message('Randevunuz Oluşturulmuştur', sender = 'furkanece99@gmail.com', recipients = [gonder.email])
+    msg.body = "Işık Leauge Randevu Mailidir"
+    mail.send(msg)
+    print(msg)
     return redirect(url_for("profile"))
+    
+    
 
 
 @app.route('/randevu/sil/<string:id>')
 def sil(id):
+    email = session["email"]
+    gonder = Kullanici.query.filter_by(email = email).first()
     randevu = Randevu.query.get(id)
     db.session.delete(randevu)
     db.session.commit()
+    msg = Message('Randevunuz İptal Edilmiştir', sender = 'furkanece99@gmail.com', recipients = [gonder.email])
+    msg.body = "Işık Leauge Randevu Mailidir"
+    mail.send(msg)
+    print(msg)
     return redirect(url_for("profile"))    
 
     

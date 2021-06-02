@@ -19,7 +19,6 @@ def login():
                session["username"] = username
                session["user_id"] = user.id
                session["email"] = user.email
-               
                return redirect(url_for("index"))
            else:
 
