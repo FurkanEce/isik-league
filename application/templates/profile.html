@@ -11,7 +11,7 @@
                   <div class="col-md-4">
                      <div class="contact-info">
                         <div class="kode-section-title">
-                           <h3>İletişim Bilgileri</h3>
+                           <h3>Profil</h3>
                         </div>
                         <div class="kode-forminfo">
                            <p>Sevgili Öğrencilerimiz,<br>
@@ -23,11 +23,7 @@
                               </li>
                               <li>
                                  <i class="fa fa-phone"></i> 
-                                 <p><strong>Telefon:</strong>  444 07 99</p>
-                              </li>
-                              <li>
-                                 <i class="fa fa-envelope-o"></i> 
-                                 <p><strong>Email:</strong><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr</a></p>
+                                 <p><strong>Telefon:</strong>-</p>
                               </li>
                            </ul>
                         </div>
@@ -39,6 +35,7 @@
                             <tr>
                             <th scope="col">#</th>
                             <th scope="col">Randevu Saati</th>
+                            <th scope="col">Randevu Tarihi</th>
                             <th scope="col">Oluşturulma Zamanı</th>
                             <th scope="col">Durum</th>
                             </tr>
@@ -48,6 +45,7 @@
                                  <tr>
                                  <th scope="row">{{ loop.index }}</th>
                                  <td>{{randevu.saat}}</td>
+                                 <td>{{randevu.tarih}}</td>
                                  <td>{{randevu.create_date}}</td>
                               {% if randevu.aktif_randevu == 1 %}   
                                  <td><a href="/randevu/sil/{{randevu.id}}"  class="btn btn-primary btn-user">İptal Et</a></td>
