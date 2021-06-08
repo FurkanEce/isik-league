@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Işık League - Giriş Yap</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{url_for('static', filename='thirdparty/sb-admin2/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -38,7 +38,7 @@
                             <div class="col-lg-8">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Hoşgeldiniz!</h1>
                                     </div>
                                     {% from "utils/formhelpers.html" import render_field %}
                                     <form class="user" method="post">
@@ -51,8 +51,7 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <label class="custom-control-label" for="customCheck">Beni Hatırla</label>
                                             </div>
                                         </div>
                                        <button type="submit" class="btn btn-primary btn-user btn-block">Giriş Yap</button>
@@ -60,7 +59,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{{url_for('register')}}">Create an Account!</a>
+                                        <a class="small" href="{{url_for('register')}}">Hesap Oluştur!</a>
                                     </div>
                                 </div>
                             </div>

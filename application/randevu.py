@@ -58,10 +58,11 @@ def kaydet():
     gonder = Kullanici.query.filter_by(email = email).first()
     print(gonder)
     randevu = Randevu(saat = saat, tarih=tarih, kullanici_id = user_id, saha = int(saha))
+    print(randevu)
     db.session.add(randevu)
     db.session.commit()
     msg = Message('Randevunuz Oluşturulmuştur', sender = 'furkanece99@gmail.com', recipients = [gonder.email])
-    msg.body = "Işık Leauge Randevu Mailidir"
+    msg.body = "Saat "+ randevu.saat +"'ya "+ str(randevu.saha) +" numaralı saha için randevunuz oluşturulmuştur iyi eğlenceler."
     mail.send(msg)
     print(msg)
     return redirect(url_for("profile"))
@@ -77,7 +78,7 @@ def sil(id):
     db.session.delete(randevu)
     db.session.commit()
     msg = Message('Randevunuz İptal Edilmiştir', sender = 'furkanece99@gmail.com', recipients = [gonder.email])
-    msg.body = "Işık Leauge Randevu Mailidir"
+    msg.body = "Saat "+ randevu.saat +"'ya "+ str(randevu.saha) +" numaralı saha için alınan randevunuz iptal edilmiştir."
     mail.send(msg)
     print(msg)
     return redirect(url_for("profile"))    

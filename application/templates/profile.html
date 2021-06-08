@@ -16,6 +16,11 @@
                         <div class="kode-forminfo">
                            <p>Sevgili Öğrencilerimiz,<br>
                               Randevu sistemi ile ilgili teknik problemleriniz için 444 07 99 No'lu telefondan ve <span><a href="mailto:bdb@isikun.edu.tr">bdb@isikun.edu.tr <a/></span>adresinden destek alabilirsiniz. </p>
+                           <h3><strong>Uyarı</strong></h3>
+                           <p>Saha 1 : Büyük Saha</p>
+                           <p>Saha 2 : Küçük Saha</p>
+                           <p>Saha 3 : Tenis Kortu</p>
+                           <p>ifade etmektedir.</p>
                            <ul class="kode-form-list">
                               <li>
                                  <i class="fa fa-home"></i> 
@@ -36,6 +41,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Randevu Saati</th>
                             <th scope="col">Randevu Tarihi</th>
+                            <th scope="col">Saha</th>
                             <th scope="col">Oluşturulma Zamanı</th>
                             <th scope="col">Durum</th>
                             </tr>
@@ -46,6 +52,7 @@
                                  <th scope="row">{{ loop.index }}</th>
                                  <td>{{randevu.saat}}</td>
                                  <td>{{randevu.tarih}}</td>
+                                 <td>{{randevu.saha}}</td>
                                  <td>{{randevu.create_date}}</td>
                               {% if randevu.aktif_randevu == 1 %}   
                                  <td><a href="/randevu/sil/{{randevu.id}}"  class="btn btn-primary btn-user">İptal Et</a></td>
