@@ -12,4 +12,4 @@ def amerikanFutbolu():
     print(haberler[0].haberler)
     print(oyuncular[0].oyuncular)
 
-    return render_template("amerikanFutbolu.html", haberler = haberler, oyuncular = oyuncular, len = len(haberler))
+    return render_template("amerikanFutbolu.html", haberler = haberler, oyuncular = oyuncular, len = len(haberler),len2 = len(oyuncular))

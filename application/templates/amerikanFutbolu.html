@@ -63,123 +63,25 @@
                             <div class="table table-responsive">
                                 <table class="table">
                                     <tr>
+                                    {% for i in range(0,len2) %}
                                         <td>
                                             <div class="col-md-4 border">
                                                 <div class="card my-3 w-75 mx-4 ">
                                                     <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
                                                     <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
+                                                    <p>{{oyuncular[i].oyuncular}}</p>
+                                                    <p>{{oyuncular[i].gorev}}</p>
+                                                    <p>{{oyuncular[i].bolum}}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            <div class="col-md-4 border">
-                                                <div class="card my-3 w-75 mx-4 ">
-                                                    <img src="{{url_for('static',filename='images/avatar.jpg')}}" class="card-img-top" alt="">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title"></h4>
-                                                        <a href="" class="card-link" disabled>{{oyuncular[0].oyuncular}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>  
-                                        <td>
-                                            
+                                        </td>
+                                    {% endfor %}
                                     </tr>
                                 </table>    
                             </div>    
-                        </div>    
-                        </div>
+                        </div>   
+                    </div>
                     </div>
                     
                     </div>

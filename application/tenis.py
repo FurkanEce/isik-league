@@ -11,7 +11,7 @@ def tenis():
     print(haberler[0].haberler)
     print(oyuncular[0].oyuncular)
 
-    return render_template("tenis.html", haberler = haberler, oyuncular = oyuncular, len = len(haberler))
+    return render_template("tenis.html", haberler = haberler, oyuncular = oyuncular, len = len(haberler), len2 = len(oyuncular))
 
 
    
