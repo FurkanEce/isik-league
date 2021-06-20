@@ -9,11 +9,12 @@ from flask_mail import Mail, Message
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'furkanece99@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Pinar123.'
+app.config['MAIL_PASSWORD'] = ''
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 mail = Mail(app)
+
 
 @app.route("/randevu", methods=['GET'])
 def randevu():

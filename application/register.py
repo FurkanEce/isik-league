@@ -3,6 +3,7 @@ from wtforms import Form,StringField,TextAreaField,PasswordField,validators
 from application.models.kullanici_model import Kullanici
 from application import app, db
 
+
 #Kayıt Olma
 @app.route("/kayıtOl",methods = ["GET","POST"])
 def register():
